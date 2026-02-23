@@ -90,21 +90,69 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/40 z-10" />
 
       {/* Title */}
-      <div className="absolute inset-0 bottom-60 md:bottom-36 flex items-center justify-center z-20 px-4">
+      <div
+        className="
+    absolute inset-0 z-20 px-4
+
+    flex flex-col items-center text-center
+
+    justify-start pt-80
+    sm:pt-36
+     md:pt-60
+  ">
         <h1
           ref={neWayRef}
           className="
-            text-white font-bold text-center
-            text-4xl
-            sm:text-6xl
-            md:text-8xl
-            lg:text-[120px]
-            xl:text-[150px]
-            leading-tight
-            will-change-transform
-          ">
+      text-white font-bold
+
+      text-4xl
+      sm:text-6xl
+      md:text-8xl
+      lg:text-[120px]
+      xl:text-[150px]
+
+      will-change-transform
+    ">
           THE NE WAY
         </h1>
+
+        {/* MOBILE DESCRIPTION */}
+        <p
+          ref={mobileDescRef}
+          className="
+      mt-4
+      max-w-xs
+      text-gray-300
+      text-sm
+
+      md:hidden
+
+      will-change-transform
+    ">
+          Discover the untouched beauty of Northeast India. Experience
+          breathtaking mountains and unforgettable journeys.
+        </p>
+
+        {/* MOBILE BUTTON */}
+        <button
+          ref={mobileBtnRef}
+          className="
+      mt-5
+      px-6 py-3
+      rounded-full
+      bg-[#28E9E9]
+      text-black
+      font-semibold
+      text-sm
+
+      md:hidden
+
+      hover:scale-105
+      transition
+      will-change-transform
+    ">
+          Explore Packages
+        </button>
       </div>
 
       {/* Mountain foreground */}
@@ -134,45 +182,6 @@ const Hero = () => {
           will-change-transform
         "
       />
-
-      {/* Mobile description + button ONLY */}
-      <div className="lg:hidden absolute bottom-94 left-0 right-0 px-6 z-40 text-center">
-        {/* Description */}
-        <p
-          ref={mobileDescRef}
-          className="
-            text-gray-300 text-sm leading-relaxed
-            max-w-xs mx-auto mb-5
-            will-change-transform
-          ">
-          Discover the untouched beauty of Northeast India. Experience
-          breathtaking mountains, hidden valleys, and unforgettable journeys
-          crafted for explorers.
-        </p>
-
-        {/* Button */}
-        <button
-          ref={mobileBtnRef}
-          className="
-            bg-[#28E9E9]
-            text-black
-            px-6 py-3
-            rounded-full
-            font-semibold
-            text-sm
-
-            hover:scale-105
-            active:scale-95
-
-            transition-all duration-300
-
-            shadow-[0_0_20px_rgba(40,233,233,0.4)]
-
-            will-change-transform
-          ">
-          Explore Packages
-        </button>
-      </div>
 
       {/* Bottom fade transition */}
       <div className="absolute bottom-0 w-full h-32 bg-gradient-to-b from-transparent to-[#0B0F11] z-40" />
