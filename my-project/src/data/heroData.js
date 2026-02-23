@@ -1,0 +1,6 @@
+export const heroData = {
+  title: "THE NE WAY",
+  description: "Through the Destination",
+  image:
+    "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?ixlib=rb-1.2.1&w=1080&fit=max&q=80&fm=jpg&crop=entropy&cs=tinysrgb",
+};
