@@ -89,7 +89,7 @@ const Navbar = () => {
               gap-8
               md:hidden
             ">
-            {navLinks.map((link) => (
+            {navLinks.links.map((link) => (
               <NavLink
                 key={link.id}
                 to={link.path}
