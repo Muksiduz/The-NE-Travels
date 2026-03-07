@@ -33,18 +33,45 @@ const PackageDetails = () => {
       </section>
 
       {/* GALLERY */}
+      {/* GALLERY */}
       <section className="max-w-7xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold mb-8">Photo Gallery</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center md:text-left">
+          Photo Gallery
+        </h2>
 
         <Swiper
           modules={[Navigation, Pagination]}
           navigation
           pagination={{ clickable: true }}
-          spaceBetween={20}
-          slidesPerView={3}>
+          spaceBetween={16}
+          breakpoints={{
+            0: {
+              slidesPerView: 1.2,
+            },
+            480: {
+              slidesPerView: 1.5,
+            },
+            640: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}>
           {pkg.gallery.map((img, i) => (
             <SwiperSlide key={i}>
-              <img src={img} className="rounded-xl h-64 w-full object-cover" />
+              <img
+                src={img}
+                alt={`gallery-${i}`}
+                className="
+            rounded-xl
+            h-52
+            sm:h-56
+            md:h-64
+            w-full
+            object-cover
+          "
+              />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -62,11 +89,13 @@ const PackageDetails = () => {
           <div className="mb-14">
             <h3 className="text-2xl font-semibold mb-4">Destination Video</h3>
 
-            <iframe
-              src={pkg.video}
-              className="w-full h-[400px] rounded-xl"
-              allowFullScreen
-            />
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden">
+              <iframe
+                src={pkg.video}
+                className="absolute inset-0 w-full h-full"
+                allowFullScreen
+              />
+            </div>
           </div>
 
           {/* HIGHLIGHTS */}
