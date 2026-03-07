@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks } from "../data/navLinks";
 import { useNavigate } from "react-router-dom";
+import { nav } from "framer-motion/client";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,11 +13,19 @@ const Navbar = () => {
     <nav className="absolute top-0 left-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
         {/* Logo */}
-        <h1 className="text-white text-xl font-bold z-50">TRAVEL</h1>
+        {/* <h1 className="text-white text-xl font-bold z-50">TRAVEL</h1> */}
+        <motion.img
+          src={navLinks.logo.src}
+          alt={navLinks.logo.alt}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="h-20 w-auto"
+        />
 
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-8 text-white text-base font-light tracking-widest relative">
-          {navLinks.map((link) => (
+          {navLinks.links.map((link) => (
             <NavLink key={link.id} to={link.path}>
               {({ isActive }) => (
                 <li className="relative cursor-pointer hover:text-[#28E9E9] transition hover:font-semibold">

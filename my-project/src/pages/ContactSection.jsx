@@ -1,7 +1,9 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { footerData } from "../data/footerData";
 
 const ContactSection = () => {
+  const { contact } = footerData;
   const formRef = useRef();
 
   const [loading, setLoading] = useState(false);
@@ -63,9 +65,9 @@ const ContactSection = () => {
           </p>
 
           <div className="space-y-4 text-gray-300">
-            <p>📍 Assam, India</p>
-            <p>📞 +91 98765 43210</p>
-            <p>✉ contact@neway.com</p>
+            <p>📍 {contact.location}</p>
+            <p>📞 {contact.phone}</p>
+            <p>✉ {contact.email}</p>
           </div>
         </div>
 

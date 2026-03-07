@@ -92,8 +92,11 @@ const DestinationCarousel = () => {
 
             <button
               ref={buttonRef}
-              onClick={() => navigate("/contact")}
-              className="bg-[#28E9E9] text-black px-6 py-3 rounded-lg font-semibold hover:scale-105 transition">
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                navigate("/contact");
+              }}
+              className="bg-[#28E9E9] text-black px-6 py-3 cursor-pointer rounded-lg font-semibold hover:scale-105 transition">
               Book Now
             </button>
           </div>

@@ -6,19 +6,27 @@ import Packages from "./pages/Packages";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactSection";
 
+import PackageDetails from "./pages/PackageDetails";
+import ScrollToTop from "./layout/ScrollToTop";
+
 const App = () => {
   return (
-    <Routes>
-      <Route element={<AnimatedLayout />}>
-        <Route path="/" element={<Home />} />
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route element={<AnimatedLayout />}>
+          <Route path="/" element={<Home />} />
 
-        <Route path="/packages" element={<Packages />} />
+          <Route path="/packages" element={<Packages />} />
 
-        <Route path="/about" element={<AboutUs />} />
+          <Route path="/about" element={<AboutUs />} />
 
-        <Route path="/contact" element={<ContactUs />} />
-      </Route>
-    </Routes>
+          <Route path="/contact" element={<ContactUs />} />
+
+          <Route path="/packages/:id" element={<PackageDetails />} />
+        </Route>
+      </Routes>
+    </>
   );
 };
 

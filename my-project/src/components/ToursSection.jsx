@@ -1,46 +1,13 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useNavigate } from "react-router-dom";
-
-const tours = [
-  {
-    id: 1,
-    title: "Kaziranga National Park",
-    location: "Assam, India",
-    duration: "3 Days",
-    price: "₹9,500",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-  },
-  {
-    id: 2,
-    title: "Meghalaya Waterfalls",
-    location: "Meghalaya, India",
-    duration: "4 Days",
-    price: "₹12,000",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-  },
-  {
-    id: 3,
-    title: "Tawang Mountains",
-    location: "Arunachal Pradesh",
-    duration: "5 Days",
-    price: "₹18,500",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b",
-  },
-  {
-    id: 4,
-    title: "Majuli Island",
-    location: "Assam, India",
-    duration: "2 Days",
-    price: "₹6,000",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-  },
-];
+import { packages } from "../data/packages";
 
 const ToursSection = () => {
   const sectionRef = useRef(null);
-
   const navigate = useNavigate();
+
+  const tours = packages.slice(0, 4); // show only 4 packages
 
   useEffect(() => {
     gsap.fromTo(
@@ -99,34 +66,44 @@ const ToursSection = () => {
               {/* Image */}
               <div className="h-56 overflow-hidden">
                 <img
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    navigate(`/packages/${tour.id}`);
+                  }}
                   src={tour.image}
+                  alt={tour.title}
                   className="w-full h-full object-cover transition duration-700 group-hover:scale-110"
                 />
               </div>
 
               {/* Content */}
               <div className="p-6 text-white">
-                <p className="text-sm text-gray-400 mb-1">{tour.location}</p>
-
                 <h3 className="text-lg font-semibold mb-3">{tour.title}</h3>
+
+                <p className="text-gray-400 text-sm mb-3 line-clamp-2">
+                  {tour.description}
+                </p>
 
                 <div className="flex justify-between items-center text-sm mb-4">
                   <span className="text-gray-400">{tour.duration}</span>
 
                   <span className="text-[#28E9E9] font-semibold">
-                    {tour.price}
+                    ₹{tour.price.toLocaleString()}
                   </span>
                 </div>
 
                 {/* Button */}
                 <button
-                  onClick={() => navigate("/contact")}
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    navigate("/contact");
+                  }}
                   className="
-                  w-full py-2 rounded-lg
-                  bg-[#28E9E9] text-black font-medium
-                  hover:bg-[#1fcfcf]
-                  transition duration-300 cursor-pointer
-                ">
+                    w-full py-2 rounded-lg
+                    bg-[#28E9E9] text-black font-medium
+                    hover:bg-[#1fcfcf]
+                    transition duration-300 cursor-pointer
+                  ">
                   Book Now
                 </button>
               </div>

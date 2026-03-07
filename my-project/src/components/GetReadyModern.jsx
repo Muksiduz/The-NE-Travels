@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useNavigate } from "react-router-dom";
+import { footerData } from "../data/footerData";
 
 const GetReadyModern = () => {
+  const { socials } = footerData;
   const sectionRef = useRef(null);
   const contentRef = useRef(null);
 
@@ -24,7 +26,7 @@ const GetReadyModern = () => {
 
   const navigate = useNavigate();
 
-  const whatsappNumber = "919876543210"; // replace with your number
+  const whatsappNumber = socials.whatsapp; // replace with your number
 
   return (
     <section

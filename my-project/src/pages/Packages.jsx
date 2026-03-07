@@ -1,6 +1,8 @@
 import { packages } from "../data/packages";
+import { useNavigate } from "react-router-dom";
 
 const Packages = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-32 bg-transparent">
       <div className="max-w-7xl mx-auto px-6">
@@ -13,7 +15,6 @@ const Packages = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {packages.map((pkg) => (
             <div
-              key={pkg.id}
               className="
                 group relative rounded-2xl overflow-hidden
                 bg-white/5 border border-white/10
@@ -22,7 +23,12 @@ const Packages = () => {
                 hover:-translate-y-2
               ">
               {/* Image */}
-              <div className="h-64 overflow-hidden">
+              <div
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  navigate(`/packages/${pkg.id}`);
+                }}
+                className="h-64 overflow-hidden">
                 <img
                   src={pkg.image}
                   alt={pkg.title}
@@ -54,9 +60,14 @@ const Packages = () => {
                   </span>
 
                   <button
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      navigate("/contact");
+                    }}
                     className="
                       bg-[#28E9E9] text-black px-4 py-2 rounded-full
                       text-sm font-medium
+                      cursor-pointer
                       hover:scale-105
                       transition
                     ">
