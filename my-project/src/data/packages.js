@@ -1,3 +1,14 @@
+import tawangOne from "../../public/images/IMG_3991.JPG.jpeg";
+import tawangTwo from "../../public/images/IMG_4232.JPG.jpeg";
+import tawangThree from "../../public/images/IMG_4249.JPG.jpeg";
+import tawangFour from "../../public/images/IMG_6047 3.jpg.jpeg";
+import tawangFive from "../../public/images/IMG_6632.jpg";
+import tawangSix from "../../public/images/IMG_7001.jpg";
+import tawangSeven from "../../public/images/IMG_7013.jpg";
+import tawangEight from "../../public/images/IMG_7050.jpg";
+import tawangNine from "../../public/images/sikkim.jpg";
+import tawangTen from "../../public/images/sikkim2.jpg";
+
 export const packages = [
   {
     id: 1,
@@ -11,9 +22,16 @@ export const packages = [
       "https://images.unsplash.com/photo-1628070018796-a9f4e2dd482a?q=80&w=1170",
 
     gallery: [
-      "https://images.unsplash.com/photo-1628070018796-a9f4e2dd482a",
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa",
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      tawangOne,
+      tawangTwo,
+      tawangThree,
+      tawangFour,
+      tawangFive,
+      tawangSix,
+      tawangSeven,
+      tawangEight,
+      tawangNine,
+      tawangTen,
     ],
 
     video: "https://www.youtube.com/embed/Scxs7L0vhZ4",
@@ -81,9 +99,9 @@ export const packages = [
 
   {
     id: 2,
-    title: "Meghalaya Tour",
-    duration: "3 Days / 2 Nights",
-    price: 4999,
+    title: "Explore Meghalaya 🏔️",
+    duration: "4 Days / 3 Nights",
+    price: 6999,
 
     location: "Meghalaya, India",
 
@@ -109,21 +127,43 @@ export const packages = [
     ],
 
     itinerary: [
-      { day: 1, title: "Shillong Arrival", description: "Explore Shillong." },
+      {
+        day: 1,
+        title: " Guwahati to Cherrapunji",
+        description:
+          "Stop 1: Umiam Lake. Great for a quick photo op or 15 min.Stop 2: Laitlum Canyons. This is a detour from the main SH-5 highway.Arrival: Reach Cherrapunji by evening. You can catch the Seven Sisters Falls at sunset, though they are most impressive during or just after the monsoon.",
+      },
       {
         day: 2,
-        title: "Cherrapunji",
-        description: "Waterfalls and caves exploration.",
+        title: "Cherrapunji - Tyrna Village",
+        description:
+          "The Trek: The Double Decker Living Root Bridge trek starts from Tyrna village. It involves about 3,500 steps one way. Blue Lagoon: This is a stunning turquoise pool a bit further from double decker bridge. ",
       },
       {
         day: 3,
-        title: "Dawki River",
-        description: "Boat ride on crystal clear water.",
+        title: "The Jaintia Hills Transition",
+        description:
+          "Drive Time: Cherrapunji to Krang Suri (Jowai) is roughly a 3-hour drive through very winding roads.Krang Suri: Famous for its crystal blue water. You can swim here (life jackets are mandatory).The Optional Dilemma: * Phe Phe Falls is spectacular but requires a small trek and a boat crossing.",
+      },
+      {
+        day: 4,
+        title: "Jowai to Guwahat",
+        description:
+          "This is about a 4.5 to 5-hour drive (approx. 160 km).Dropping at Airport /Railway Station",
       },
     ],
 
-    inclusions: ["Hotel stay", "Breakfast", "Transportation"],
-    exclusions: ["Personal expenses", "Insurance"],
+    inclusions: [
+      "Accommodation in 3 Star hotels on double sharing",
+      "Meal Plan: Breakfast at Hotels",
+      "All transfers & Sighgseeing as per Itinerary,Driver allowances, Toll Tax, Parking Charges, States Tax,Professional Tour Guide to assist throughout the Trip",
+    ],
+    exclusions: [
+      "Personal expenses such as drinks, laundry, camera fees or any other item",
+      "Entry tickets and activities",
+      "Lunch and dinner though out the tour",
+      "International/Domestic airfare, visa fees, airport tax or any kind of insurance cover",
+    ],
 
     reviews: [
       {
