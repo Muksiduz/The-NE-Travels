@@ -34,7 +34,7 @@ export const packages = [
       tawangTen,
     ],
 
-    video: "https://www.youtube.com/embed/Scxs7L0vhZ4",
+    video: "https://www.youtube.com",
 
     description:
       "Discover the breathtaking beauty of Tawang in Arunachal Pradesh. Visit the famous Tawang Monastery, cross the scenic Sela Pass, and explore stunning Himalayan landscapes.",
